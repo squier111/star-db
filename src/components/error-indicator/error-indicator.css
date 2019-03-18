@@ -1,0 +1,19 @@
+.error-indicator {
+  text-align: center;
+  width: 100%;
+}
+.error-indicator span {
+  color: blanchedalmond;
+}
+.title {
+  display: block;
+  font-size: 30px;
+}
+.visual {
+  width: 100px;
+  margin: 0 auto;
+}
+.visual img {
+  max-width: 100%;
+  height: auto;
+}

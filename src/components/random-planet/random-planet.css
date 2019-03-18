@@ -1,0 +1,18 @@
+img {
+  max-width: 100%;
+  height: auto;
+}
+.card {
+  padding: 10px;
+  align-items: center;
+  margin: 0 0 20px;
+  flex-direction: row;
+}
+.planet-datails {
+  overflow: hidden;
+  border-radius:10px;
+}
+.planet-datails img {
+  overflow: hidden;
+  border-radius:10px;
+}

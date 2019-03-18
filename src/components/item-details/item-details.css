@@ -1,0 +1,18 @@
+img {
+  max-width: 100%;
+  height: auto;
+}
+.card {
+  padding: 10px;
+  margin: 0 0 20px;
+  align-items: center;
+  flex-direction: row;
+}
+.person-datails {
+  overflow: hidden;
+  border-radius:10px;
+}
+.person-datails img {
+  overflow: hidden;
+  border-radius:10px;
+}

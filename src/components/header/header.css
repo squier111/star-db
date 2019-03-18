@@ -1,0 +1,20 @@
+h3 a {
+  color: #fff;
+}
+.header {
+  margin: 0 0 20px;
+}
+.header ul {
+  width: 50%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.header li {
+  font-size: 18px;
+  line-height: 20px;
+}
