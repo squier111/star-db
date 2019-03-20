@@ -90,14 +90,14 @@ constructor() {
 
           <Row
             left={personDetails}
-            right={starshipDetails}/>
+           />
 
 
           <PersonList/>
 
           <PlanetList />
-
-          <StarshipList/>
+{/* 
+          <StarshipList/> */}
 
         </div>
       </SwapiServiceProvider>
