@@ -1,24 +1,12 @@
 import React , {Component} from 'react'
 import Header from '../header'
-import Row from '../row'
 import RandomPlanet from '../random-planet'
-import ItemDetails , {Record} from '../item-details'
 import ErrorBtn from '../error-button'
-import PeoplePage from '../people-page'
+import {PeoplePage , PlanetPage , StarshipPage} from '../pages'
 import ErrorIndicator from '../error-indicator'
 import SwapiService from '../../services/swapi-service'
 
 import { SwapiServiceProvider} from '../swapi-service-context'
-
-
-import {
-  PersonList,
-  PlanetList,
-  StarshipList,
-  PersonDetails,
-  PlanetDetails,
-  StarshipDetails
-} from '../sw-components'
 
 import './app.css'
 
@@ -30,13 +18,19 @@ swapiService = new SwapiService();
 constructor() {
     super();
     this.state = {
-        showRandomPlanet: true,
-        hasError: false,
+      selectedItem: 5,
+      showRandomPlanet: true,
+      hasError: false,
     }
   }
 
 
 
+  onItemSelected = (id) => {
+    this.setState({
+        selectedItem: id
+    })
+}
 
   toggleRandomPlanet = () => {
     this.setState(({ showRandomPlanet})=>{
@@ -58,14 +52,6 @@ constructor() {
 
   render() {
 
-    const personDetails = (
-      <PersonDetails itemId={11} />
-    )
-
-    const starshipDetails = (
-      <StarshipDetails itemId={11} />
-    )
-
     if(this.state.hasError) {
       return < ErrorIndicator/>
     }
@@ -83,21 +69,14 @@ constructor() {
               </button>
               <ErrorBtn/>
           </div>
+
+
           <PeoplePage/>
 
+          <PlanetPage/>
 
-          <PersonDetails itemId ={11}/>
+          <StarshipPage/>
 
-          <Row
-            left={personDetails}
-           />
-
-
-          <PersonList/>
-
-          <PlanetList />
-{/* 
-          <StarshipList/> */}
 
         </div>
       </SwapiServiceProvider>

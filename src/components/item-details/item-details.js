@@ -65,6 +65,7 @@ export default class ItemDetails extends Component {
       item: {},
       image: null,
       loading: true,
+      selectMe: true,
     }
   };
 
@@ -85,6 +86,7 @@ export default class ItemDetails extends Component {
     }
     this.setState({
       loading: true,
+      selectMe: false,
     });
 
     getData(itemId)
@@ -104,13 +106,15 @@ export default class ItemDetails extends Component {
     }
 
     const {children} = this.props;
-    const { loading, item , image} = this.state;
+    const { loading, item , image , selectMe} = this.state;
     
-    const spinner = loading ? <Spinner /> : null;
+    const spinner = loading && !selectMe  ? <Spinner /> : null;
+    const chooseMe = selectMe ? <p>  &lt;=== Choose Me Mzfk</p> : null;
     const content = !loading ? <ItemView item={item} image={image} children={children} /> : null;
     return (
       <div className="row card">
         {spinner}
+        {chooseMe}
         {content}
       </div>
     );
