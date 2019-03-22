@@ -62,6 +62,8 @@ constructor() {
         <div className="wrapper">
           <Header/>
           {planet}
+
+          
           <div className="row mb2 btn-holder">
               <button className="toggle-planet btn btn-warning btn-lg"
                 onClick={this.toggleRandomPlanet}>

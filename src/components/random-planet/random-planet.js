@@ -19,14 +19,16 @@ export default class RandomPlanet extends Component {
   
   
   componentDidMount() {
-    console.log("componentDidMount()");
+    
+    const {updateInterval} = this.props;
+    // console.log("componentDidMount()");
     this.updatePlanet();
-    this.interval = setInterval(this.updatePlanet,5000);
+    this.interval = setInterval(this.updatePlanet,updateInterval);
   }
   
   
   componentWillUnmount() {
-    console.log("componentWillUnmount()");
+    // console.log("componentWillUnmount()");
     clearInterval(this.interval);
   }
 
@@ -80,6 +82,8 @@ export default class RandomPlanet extends Component {
 
 }
 
+
+
 const PlanetView = ({planet}) => {
   const {id, name, population, rotationPeriod, diameter, climate} = planet;
   return (
@@ -110,4 +114,21 @@ const PlanetView = ({planet}) => {
           </div>
       </>
   )
+}
+
+
+
+RandomPlanet.defaultProps = {
+  updateInterval : 10000,
+}
+
+RandomPlanet.propTypes = {
+  updateInterval: (props, propName, componentName) => {
+    const value = props[propName];
+
+    if(typeof value === 'number' && !isNaN(value)) {
+      return null;
+    }
+    return new TypeError ( `${componentName} : ${propName} must be number bitch `)
+  }
 }
