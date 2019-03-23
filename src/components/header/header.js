@@ -1,4 +1,5 @@
 import React , {Component} from 'react'
+import {Link} from 'react-router-dom'
 import './header.css'
 
 export default class Header extends Component {
@@ -6,17 +7,17 @@ export default class Header extends Component {
     return (
       <div className="header d-flex">
           <h3>
-              Star DB
+            <Link to="/">Star DB</Link>
           </h3>
           <ul className="d-flex">
             <li>
-              <a href = "javascript:void(0);">People</a>
+              <Link to="/people">People</Link>
             </li>
             <li>
-              <a href = "javascript:void(0);">Planets</a>
+            <Link to="/planets">Planets</Link>
             </li>
             <li>
-              <a href = "javascript:void(0);">Starships</a>
+              <Link to="/starships">Starships</Link>
             </li>
           </ul>
       </div>
