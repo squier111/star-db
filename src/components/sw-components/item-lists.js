@@ -46,8 +46,8 @@ const PlanetList = withSwapiService(mapPlanetMethodsToProps)(
                             ItemList)));
 
 const StarshipList = withSwapiService(mapStarshipMethodsToProps)(
-                    withData(
-                        withChildFunction(renderModerAndName)(ItemList)));
+                        withData(
+                            withChildFunction(renderModerAndName)(ItemList)));
                         
 
 

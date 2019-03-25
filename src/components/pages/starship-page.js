@@ -1,37 +1,25 @@
-import React , {Component} from 'react'
-import Row from '../row'
-import ErrorBoundry from '../error-boundry'
+import React  from 'react';
+import ErrorBoundry from '../error-boundry';
 import {
   StarshipList,
-  StarshipDetails,
+} from '../sw-components';
 
-} from '../sw-components'
-
-export default class StarshipPage extends Component {
-
-  constructor() {
-      super();
-      this.state = {
-          selectedItem: null,
-      }
-  }
-  
+import {withRouter} from 'react-router-dom'
 
 
-  onItemSelected = (id) => {
-      this.setState({
-          selectedItem: id
-      })
-  }
+const StarshipPage = ({history}) => {
 
-  render() {
-      return (
-        <ErrorBoundry>
-          <Row
-            left ={<StarshipList onItemSelected={this.onItemSelected}/>}
-            right={<StarshipDetails itemId ={this.state.selectedItem}/>}
-          />
-        </ErrorBoundry>
-      )
-  }
+
+    return (
+      <ErrorBoundry>
+        <StarshipList 
+        onItemSelected={(itemId) => {
+            history.push(`/starships/${itemId}`)
+        }} />
+      </ErrorBoundry>
+    )
+
 }
+
+
+export default  withRouter(StarshipPage);

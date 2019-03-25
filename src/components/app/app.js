@@ -67,6 +67,7 @@ constructor() {
             <Header/>
             {planet}
 
+
             
             <div className="row mb2 btn-holder">
                 <button className="toggle-planet btn btn-warning btn-lg"
@@ -86,13 +87,14 @@ constructor() {
               render={() => <h2>People</h2>}
               exact />
 
-            <Route path ="/people" component ={PeoplePage}/>
+            <Route path="/people/:id?" component ={PeoplePage}/>
 
             <Route path="/planets" component={PlanetPage} />
 
             <Route path="/starships" exact component={StarshipPage} />
 
             <Route  path="/starships/:id" 
+                    
                     render= {({match, location, history}) => {
                       const { id } = match.params;
                       console.log(match);
