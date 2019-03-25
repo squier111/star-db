@@ -97,8 +97,8 @@ export default class SwapiService {
 
 const swapi = new SwapiService();
 
-swapi.getStarship(3).then((planets)=>{
-  console.log(planets.id);
+swapi.getAllStarships().then((planets)=>{
+  console.log(planets);
   // planets.forEach( (p) => {
   // });
 });

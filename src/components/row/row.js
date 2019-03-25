@@ -21,7 +21,7 @@ const Row =({left, right}) => {
 Row.propTypes = {
     left: PropTypes.node,
     right: PropTypes.node,
-  };
+};
 
 
 
