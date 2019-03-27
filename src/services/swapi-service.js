@@ -15,6 +15,17 @@ export default class SwapiService {
     return await res.json();
   }
 
+
+  // getResourceImg = async (url) => {
+  //   const res1 = await fetch(`${this._imageBase}${url}`);
+    
+  //   if(!res1.ok) {
+  //     throw new Error(`could not fetch ${url}  receved ${res1.status}`)
+  //   }
+  //   console.log(res1);
+  //   return await res1.json();
+  // }
+
   
   getAllPeople = async () => {
     const res = await this.getResource(`/people/`);
@@ -51,6 +62,12 @@ export default class SwapiService {
   getPlanetImage = (id) => {
     return `${this._imageBase}/planets/${id}.jpg`
   }
+
+  // getPlanetImage = (id) => {
+  //   const planetImg = this.getResourceImg(`/planets/${id}.jpg`)
+  //   return planetImg;
+  // }
+
 
   _extractId = (item) => {
     const idRegExp = /\/([0-9]*)\/$/
@@ -98,9 +115,9 @@ export default class SwapiService {
 const swapi = new SwapiService();
 
 swapi.getAllStarships().then((planets)=>{
-  console.log(planets);
-  // planets.forEach( (p) => {
-  // });
+    planets.forEach( (p) => {
+      // console.log(p.name);
+    });
 });
 
 

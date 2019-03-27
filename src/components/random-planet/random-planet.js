@@ -8,9 +8,12 @@ import PropTypes from 'prop-types'
 
 
 export default class RandomPlanet extends Component {
+  
+  swapiservice = new SwapiService();
+
+
   constructor(){
     super();
-    console.log("constructor()");
     this.state = {
       planet: {},
       loading:true,
@@ -33,8 +36,6 @@ export default class RandomPlanet extends Component {
     clearInterval(this.interval);
   }
 
-
-  swapiservice = new SwapiService();
 
 
   onError = (err) => {
@@ -82,6 +83,7 @@ export default class RandomPlanet extends Component {
   }
 
 }
+
 
 
 

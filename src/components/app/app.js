@@ -6,6 +6,7 @@ import {StarshipDetails} from '../sw-components';
 import {PeoplePage , PlanetPage , StarshipPage, LoginPage , SecretPage} from '../pages'
 import ErrorIndicator from '../error-indicator'
 import SwapiService from '../../services/swapi-service'
+import DummySwapiService from '../../services/dummy-swapi-service'
 
 import { SwapiServiceProvider} from '../swapi-service-context'
 
